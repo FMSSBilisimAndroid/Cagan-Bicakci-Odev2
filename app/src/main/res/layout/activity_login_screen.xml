@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginScreenActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/image_bg"
+            android:src="@drawable/ic_back"
+            android:contentDescription="@string/back_btn" />
+
+
+        <View
+            style="@style/greenEllipseStyle"
+            android:layout_marginStart="-215dp"
+            android:layout_marginTop="269dp" />
+
+        <View
+            style="@style/greenEllipseStyle"
+            android:layout_marginStart="-32dp"
+            android:layout_marginTop="522dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/tv_welcome_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="38dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginEnd="100dp"
+                android:text="@string/welcome"
+                android:textSize="@dimen/tv_medium_size" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="38dp"
+                android:layout_marginEnd="52dp"
+                android:text="@string/enter_credentials" />
+
+            <EditText
+                android:id="@+id/et_username"
+                style="@style/et_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="140dp"
+                android:hint="@string/username_hint" />
+
+            <EditText
+                android:id="@+id/et_password"
+                style="@style/et_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:hint="@string/password_hint"
+                android:inputType="textPassword" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_login"
+                style="@style/btn_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="91dp"
+                android:layout_marginEnd="100dp"
+                android:text="@string/login_btn_text"
+                android:textSize="@dimen/login_btn_text_size"
+                app:cornerRadius="@dimen/btn_corner_radius" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:gravity="center"
+                android:text="@string/forgot_password" />
+
+            <TextView
+                android:id="@+id/link_create_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/or_create_new_account" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+
+</ScrollView>

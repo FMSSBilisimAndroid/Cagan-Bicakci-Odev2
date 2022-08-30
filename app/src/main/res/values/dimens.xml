@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="ellipse_width">460dp</dimen>
+    <dimen name="ellipse_height">460dp</dimen>
+    <dimen name="img_small_width">103dp</dimen>
+    <dimen name="img_small_height">103dp</dimen>
+    <dimen name="img_large_width">165dp</dimen>
+    <dimen name="img_large_height">165dp</dimen>
+    <dimen name="tv_subtitle_size">16sp</dimen>
+    <dimen name="tv_title_size">60sp</dimen>
+    <dimen name="btn_corner_radius">30dp</dimen>
+    <dimen name="btn_join_text_size">32sp</dimen>
+    <dimen name="tv_welcome_size">32sp</dimen>
+    <dimen name="login_btn_text_size">28sp</dimen>
+    <dimen name="et_text_size">26sp</dimen>
+    <dimen name="tv_medium_size">32sp</dimen>
+
+</resources>

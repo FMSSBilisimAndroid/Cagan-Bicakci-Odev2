@@ -1,3 +1,25 @@
 <resources>
-    <string name="app_name">Odev2FMSS</string>
+    <string name="app_name">Login Screen UI</string>
+    <string name="start_text">Let\'s Get\nStarted</string>
+    <string name="grow_together">Grow Together</string>
+
+    <string name="join_btn_text">JOIN NOW</string>
+    <string name="login_btn_text">LOGIN</string>
+    <string name="sign_up_btn_text">Sign Up</string>
+
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="enter_email_hint">Enter Email Id</string>
+    <string name="create_username">Create Username</string>
+    <string name="create_password">Create Password</string>
+
+    <string name="welcome">Welcome Back!</string>
+    <string name="enter_credentials">Enter Your Username &amp; Password</string>
+    <string name="forgot_password">Forgotten Password?</string>
+
+    <string name="create_account">Create Account :)</string>
+    <string name="or_create_new_account">Or Create a New Account</string>
+    <string name="back_btn">back button</string>
+    <string name="image_desc">person image</string>
+
 </resources>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpScreenActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/image_bg"
+            android:src="@drawable/ic_back"
+            android:contentDescription="@string/back_btn" />
+
+        <View
+            android:layout_width="460dp"
+            android:layout_height="460dp"
+            android:layout_marginStart="-90dp"
+            android:layout_marginTop="59dp"
+            android:background="@drawable/pink_ellipse"
+            />
+
+        <View
+            android:layout_width="460dp"
+            android:layout_height="460dp"
+            android:layout_marginStart="93dp"
+            android:layout_marginTop="312dp"
+            android:background="@drawable/pink_ellipse"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/tv_welcome_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="120dp"
+                android:layout_marginEnd="162dp"
+                android:textSize="@dimen/tv_medium_size"
+                android:text="@string/create_account" />
+
+
+            <EditText
+                android:id="@+id/et_create_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                style="@style/et_style"
+                android:hint="@string/enter_email_hint" />
+
+            <EditText
+                android:id="@+id/et_create_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                style="@style/et_style"
+                android:hint="@string/create_username"
+                android:inputType="textPassword" />
+
+            <EditText
+                android:id="@+id/et_create_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                style="@style/et_style"
+                android:hint="@string/create_password"
+                android:paddingBottom="50dp"/>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_login"
+                style="@style/btn_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:layout_marginStart="100dp"
+                android:layout_marginEnd="100dp"
+                android:text="@string/sign_up_btn_text"
+                android:textAllCaps="false"
+                android:textSize="@dimen/login_btn_text_size"
+                app:cornerRadius="@dimen/btn_corner_radius" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+
+
+</ScrollView>

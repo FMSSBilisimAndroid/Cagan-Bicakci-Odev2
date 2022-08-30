@@ -1,18 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <View
+            style="@style/blueEllipseStyle"
+            android:layout_marginStart="31dp"
+            android:layout_marginTop="-130dp" />
+
+        <View
+            style="@style/blueEllipseStyle"
+            android:layout_marginStart="214dp"
+            android:layout_marginTop="123dp" />
+
+
+        <androidx.cardview.widget.CardView
+            style="@style/cv_small_image_style"
+            android:layout_marginStart="249dp"
+            android:layout_marginTop="140dp"
+            app:cardCornerRadius="100dp">
+
+            <ImageView
+                android:id="@+id/small_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/small"
+                android:contentDescription="@string/image_desc" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            style="@style/cv_large_image_style"
+            android:layout_marginStart="175dp"
+            android:layout_marginTop="259dp"
+            app:cardCornerRadius="100dp">
+
+            <ImageView
+                android:id="@+id/img_large"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/large"
+                android:contentDescription="@string/image_desc" />
+
+
+        </androidx.cardview.widget.CardView>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginBottom="46dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/btn_join_now"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <TextView
+            android:id="@+id/text_get_started"
+            style="@style/tv_start_header_style"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/start_text" />
+
+        <TextView
+            android:id="@+id/grow_together"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="7dp"
+            android:text="@string/grow_together"
+            style="@style/tv_start_subtitle_style"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_join_now"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="74dp"
+        android:layout_marginEnd="74dp"
+        android:layout_marginBottom="48dp"
+        style="@style/btn_style"
+        app:cornerRadius="@dimen/btn_corner_radius"
+        android:textSize="@dimen/btn_join_text_size"
+        android:text="@string/join_btn_text"
+        app:layout_constraintBottom_toBottomOf="@id/frameLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
