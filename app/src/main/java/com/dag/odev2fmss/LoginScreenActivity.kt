@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.dag.odev2fmss.databinding.ActivityLoginScreenBinding
+import com.dag.odev2fmss.model.User
+import com.google.android.material.snackbar.Snackbar
 
 class LoginScreenActivity : AppCompatActivity() {
 
@@ -23,6 +25,20 @@ class LoginScreenActivity : AppCompatActivity() {
 
         binding.btnBack.setOnClickListener{
             this.finish()
+        }
+
+        binding.btnLogin.setOnClickListener{
+
+            val username = binding.etUsername.text.toString()
+            val password = binding.etPassword.text.toString()
+
+            for (user in User.userList){
+                if (user.username == username && user.password == password){
+                    Snackbar.make(it,"Welcome $username!", Snackbar.LENGTH_INDEFINITE).show()
+                }else{
+                    Snackbar.make(it,"Username or password is wrong!", Snackbar.LENGTH_LONG).show()
+                }
+            }
         }
 
     }

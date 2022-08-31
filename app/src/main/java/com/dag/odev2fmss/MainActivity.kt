@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.dag.odev2fmss.databinding.ActivityMainBinding
+import com.dag.odev2fmss.model.User
 
 class MainActivity : AppCompatActivity() {
 
