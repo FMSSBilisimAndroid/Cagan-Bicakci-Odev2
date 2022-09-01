@@ -9,18 +9,12 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <ImageButton
             android:id="@+id/btn_back"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/image_bg"
-            android:src="@drawable/ic_back"
+            style="@style/back_btn_style"
             android:contentDescription="@string/back_btn" />
-
 
         <View
             style="@style/greenEllipseStyle"
@@ -38,20 +32,15 @@
             android:orientation="vertical">
 
             <TextView
-                style="@style/tv_welcome_style"
+                style="@style/tv_title_style"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="38dp"
-                android:layout_marginTop="100dp"
-                android:layout_marginEnd="100dp"
-                android:text="@string/welcome"
-                android:textSize="@dimen/tv_medium_size" />
+                android:text="@string/welcome" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="38dp"
-                android:layout_marginEnd="52dp"
+                style="@style/tv_start_subtitle_style"
                 android:text="@string/enter_credentials" />
 
             <EditText
@@ -64,24 +53,18 @@
 
             <EditText
                 android:id="@+id/et_password"
-                style="@style/et_style"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                style="@style/et_style"
                 android:hint="@string/password_hint"
                 android:inputType="textPassword" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_login"
-                style="@style/btn_style"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="91dp"
-                android:layout_marginEnd="100dp"
-                android:fontFamily="@font/inder"
+                style="@style/btn_style"
                 android:text="@string/login_btn_text"
-                android:textSize="@dimen/login_btn_text_size"
                 app:cornerRadius="@dimen/btn_corner_radius" />
 
             <TextView

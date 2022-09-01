@@ -83,25 +83,21 @@
 
         <TextView
             android:id="@+id/grow_together"
+            style="@style/tv_start_subtitle_style"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="7dp"
-            android:text="@string/grow_together"
-            style="@style/tv_start_subtitle_style"/>
+            android:fontFamily="@font/inter"
+            android:text="@string/grow_together" />
 
     </LinearLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_join_now"
-        style="@style/btn_style"
+        style="@style/join_btn_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="74dp"
-        android:layout_marginEnd="74dp"
-        android:layout_marginBottom="48dp"
-        android:fontFamily="@font/inder"
         android:text="@string/join_btn_text"
-        android:textSize="@dimen/btn_join_text_size"
         app:cornerRadius="@dimen/btn_corner_radius"
         app:layout_constraintBottom_toBottomOf="@id/frameLayout"
         app:layout_constraintEnd_toEndOf="parent"

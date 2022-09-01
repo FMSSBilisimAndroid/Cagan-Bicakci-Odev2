@@ -13,12 +13,7 @@
 
         <ImageButton
             android:id="@+id/btn_back"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="29dp"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/image_bg"
-            android:src="@drawable/ic_back"
+            style="@style/back_btn_style"
             android:contentDescription="@string/back_btn" />
 
         <View
@@ -43,15 +38,10 @@
             android:orientation="vertical">
 
             <TextView
-                style="@style/tv_welcome_style"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="120dp"
-                android:layout_marginEnd="162dp"
-                android:textSize="@dimen/tv_medium_size"
+                style="@style/tv_title_style"
                 android:text="@string/create_account" />
-
 
             <EditText
                 android:id="@+id/et_create_email"
@@ -85,13 +75,9 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_sign_up"
-                style="@style/btn_style"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="60dp"
-                android:layout_marginEnd="100dp"
-                android:fontFamily="@font/inder"
+                style="@style/btn_style"
                 android:text="@string/sign_up_btn_text"
                 android:textAllCaps="false"
                 android:textSize="@dimen/login_btn_text_size"
