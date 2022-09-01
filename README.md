@@ -13,10 +13,11 @@ Kotlin'de Iterable ve Sequence aynı fonksiyonları sunan interfacelerdir. Seque
 
 ### Screenshots
 
-<img src="https://user-images.githubusercontent.com/44499663/187951207-60fecfa7-3da5-4336-a2dc-c7ffc1ea29a0.png" width="40%" height="40%"/>
+<p float="left">
+  <img src="https://user-images.githubusercontent.com/44499663/187951207-60fecfa7-3da5-4336-a2dc-c7ffc1ea29a0.png" width="40%" height="40%"/>
+  <img src="https://user-images.githubusercontent.com/44499663/187951225-344f7e51-998a-42c3-ae07-c49138dce753.png" width="40%" height="40%"/>
+  <img src="https://user-images.githubusercontent.com/44499663/187951238-2198e7f0-6aa6-40aa-b840-670c7a16a7a0.png" width="40%" height="40%"/>
+</p>
 
-<img src="https://user-images.githubusercontent.com/44499663/187951225-344f7e51-998a-42c3-ae07-c49138dce753.png" width="40%" height="40%"/>
-
-<img src="https://user-images.githubusercontent.com/44499663/187951238-2198e7f0-6aa6-40aa-b840-670c7a16a7a0.png" width="40%" height="40%"/>
 
 
