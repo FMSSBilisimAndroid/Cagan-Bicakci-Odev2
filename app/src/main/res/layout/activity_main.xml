@@ -10,11 +10,7 @@
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent">
+        android:layout_height="match_parent">
 
         <View
             style="@style/blueEllipseStyle"
@@ -86,8 +82,7 @@
             style="@style/tv_start_subtitle_style"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginStart="7dp"
-            android:fontFamily="@font/inter"
+            android:layout_marginStart="0dp"
             android:text="@string/grow_together" />
 
     </LinearLayout>
