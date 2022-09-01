@@ -93,15 +93,16 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_join_now"
+        style="@style/btn_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="74dp"
         android:layout_marginEnd="74dp"
         android:layout_marginBottom="48dp"
-        style="@style/btn_style"
-        app:cornerRadius="@dimen/btn_corner_radius"
-        android:textSize="@dimen/btn_join_text_size"
+        android:fontFamily="@font/inder"
         android:text="@string/join_btn_text"
+        android:textSize="@dimen/btn_join_text_size"
+        app:cornerRadius="@dimen/btn_corner_radius"
         app:layout_constraintBottom_toBottomOf="@id/frameLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
