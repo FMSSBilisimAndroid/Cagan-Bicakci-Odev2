@@ -59,7 +59,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 style="@style/et_style"
-                android:hint="@string/enter_email_hint" />
+                android:hint="@string/enter_email_hint"
+                android:inputType="textEmailAddress"/>
 
             <EditText
                 android:id="@+id/et_create_username"
@@ -68,7 +69,8 @@
                 android:layout_marginTop="40dp"
                 style="@style/et_style"
                 android:hint="@string/create_username"
-                android:inputType="textPassword" />
+                android:inputType="text"
+                />
 
             <EditText
                 android:id="@+id/et_create_password"
@@ -77,11 +79,12 @@
                 android:layout_marginTop="40dp"
                 style="@style/et_style"
                 android:hint="@string/create_password"
+                android:inputType="textPassword"
                 android:paddingBottom="50dp"/>
 
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_login"
+                android:id="@+id/btn_sign_up"
                 style="@style/btn_style"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -95,7 +98,5 @@
 
         </LinearLayout>
     </FrameLayout>
-
-
 
 </ScrollView>
