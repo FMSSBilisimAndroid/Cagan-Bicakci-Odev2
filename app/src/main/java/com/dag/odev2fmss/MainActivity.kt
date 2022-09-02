@@ -9,11 +9,12 @@ import com.dag.odev2fmss.viewmodel.UserViewModel
 import com.dag.odev2fmss.viewmodel.UserViewModelFactory
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var binding : ActivityMainBinding
     private lateinit var loginIntent: Intent
 
-    //We create a companion object for view to access from all the classes both login and sign up pages
+    /**
+     *  Companion object for view model to access data both login and sign up pages
+     */
     companion object {
         lateinit var viewModel: UserViewModel
     }
@@ -27,7 +28,9 @@ class MainActivity : AppCompatActivity() {
             onJoinButtonClicked()
         }
 
-        //we initialized the view model we created.
+        /**
+         *  view model initialized
+         */
         val factory = UserViewModelFactory()
         viewModel = ViewModelProvider(this,factory).get(UserViewModel::class.java)
 

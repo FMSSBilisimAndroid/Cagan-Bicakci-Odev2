@@ -3,11 +3,11 @@ package com.dag.odev2fmss
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.dag.odev2fmss.databinding.ActivityLoginScreenBinding
 import com.google.android.material.snackbar.Snackbar
 
 class LoginScreenActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityLoginScreenBinding
     private lateinit var signUpIntent: Intent
 
@@ -22,33 +22,40 @@ class LoginScreenActivity : AppCompatActivity() {
             startActivity(signUpIntent)
         }
 
+        /**
+         * finish(): Current Activity is propagated back to previous Activity
+         */
         binding.btnBack.setOnClickListener {
-            //to finish current activity to go back
             this.finish()
         }
 
         binding.btnLogin.setOnClickListener {
-
-            val username = binding.etUsername.text.toString()
-            val password = binding.etPassword.text.toString()
-
-            //we set this variable to a user4 that register if its not an error message show up
-            var currentUser = ""
-
-            for (user in MainActivity.viewModel.userList) {
-                currentUser = user.username
-                if (user.username == username && user.password == password) {
-                    Snackbar.make(it, "Welcome $username, good to see you!", Snackbar.LENGTH_LONG).show()
-                } else {
-                    Snackbar.make(it, "Username or password is wrong!", Snackbar.LENGTH_LONG).show()
-                }
-            }
-
-            if(currentUser.isEmpty()) {
-                Snackbar.make(it, "You should sign up first!", Snackbar.LENGTH_LONG).show()
-            }
-
+            onLoginButtonClicked(it)
         }
 
+    }
+
+    private fun onLoginButtonClicked(view: View) {
+
+        val usernameInput = binding.etUsername.text.toString()
+        val passwordInput = binding.etPassword.text.toString()
+
+        /**
+         * If user exist in view model set isUserExist to true otherwise it false
+         */
+        var isUserExist = false
+
+        for (user in MainActivity.viewModel.userList) {
+            if (user.username == usernameInput && user.password == passwordInput) {
+                isUserExist = true
+                Snackbar.make(view, "Welcome $usernameInput, good to see you!", Snackbar.LENGTH_LONG).show()
+            } else {
+                Snackbar.make(view, "Username or password is wrong!", Snackbar.LENGTH_LONG).show()
+            }
+        }
+
+        if(!isUserExist) {
+            Snackbar.make(view, "You should sign up first!", Snackbar.LENGTH_LONG).show()
+        }
     }
 }
