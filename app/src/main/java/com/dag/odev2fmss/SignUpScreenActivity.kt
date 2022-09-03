@@ -1,5 +1,4 @@
 package com.dag.odev2fmss
-
 import android.os.Bundle
 import android.util.Patterns
 import android.view.View
@@ -15,6 +14,7 @@ class SignUpScreenActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignUpScreenBinding
     private lateinit var credentialErrorType: CredentialError
+    private var currentUser: User? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +45,7 @@ class SignUpScreenActivity : AppCompatActivity() {
             CredentialError.EMAIL -> showSnackBar(view, "Enter a valid email!")
             CredentialError.USERNAME -> showSnackBar(view, "Username can not be empty!")
             CredentialError.PASSWORD -> showSnackBar(view, "Password should be at least 6 characters!")
+            CredentialError.USER_ALREADY_EXIST -> showSnackBar(view, "User already exist!")
             CredentialError.NONE -> {
 
                 val user = User(
@@ -75,6 +76,15 @@ class SignUpScreenActivity : AppCompatActivity() {
         username: CharSequence?,
         password: CharSequence?
     ) {
+
+        currentUser = null
+
+        for (user in MainActivity.viewModel.userList) {
+            if (user.email == email || user.username == username) {
+                currentUser = user
+            }
+        }
+
         credentialErrorType = when {
             email.isNullOrEmpty() || !(Patterns.EMAIL_ADDRESS.matcher(email).matches()) -> {
                 CredentialError.EMAIL
@@ -85,6 +95,10 @@ class SignUpScreenActivity : AppCompatActivity() {
             password.isNullOrEmpty() || (password.length < 6) -> {
                 CredentialError.PASSWORD
             }
+            currentUser != null -> {
+                CredentialError.USER_ALREADY_EXIST
+            }
+
             else -> CredentialError.NONE
 
         }
