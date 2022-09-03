@@ -1,4 +1,5 @@
 package com.dag.odev2fmss
+
 import android.os.Bundle
 import android.util.Patterns
 import android.view.View
@@ -23,11 +24,11 @@ class SignUpScreenActivity : AppCompatActivity() {
         /**
          *  finish(): Current Activity is propagated back to previous Activity
          */
-        binding.btnBack.setOnClickListener{
+        binding.btnBack.setOnClickListener {
             this.finish()
         }
 
-        binding.btnSignUp.setOnClickListener{
+        binding.btnSignUp.setOnClickListener {
             onSignUpClicked(it)
         }
     }
@@ -38,74 +39,64 @@ class SignUpScreenActivity : AppCompatActivity() {
         val usernameInput = binding.etCreateUsername.text.toString()
         val passwordInput = binding.etCreatePassword.text.toString()
 
-        if (isValidEmail(emailInput) && isValidPassword(passwordInput) && isValidUserName(usernameInput)){
+        validateCredentials(emailInput, usernameInput, passwordInput)
 
-            val user = User(
-                email = emailInput,
-                username = usernameInput,
-                password = passwordInput
-            )
+        when (credentialErrorType) {
+            CredentialError.EMAIL -> showSnackBar(view, "Enter a valid email!")
+            CredentialError.USERNAME -> showSnackBar(view, "Username can not be empty!")
+            CredentialError.PASSWORD -> showSnackBar(view, "Password should be at least 6 characters!")
+            CredentialError.NONE -> {
 
-            /**
-             * user object created and added to user List by calling add() method.
-             * Since it's a companion object, we can statically call add() method.
-             */
+                val user = User(
+                    email = emailInput,
+                    username = usernameInput,
+                    password = passwordInput
+                )
 
-            MainActivity.viewModel.add(user)
+                /**
+                 * user object created and added to user List by calling add() method.
+                 * Since it's a companion object, we can statically call add() method.
+                 */
 
-            showSnackBar(view,"User: ${user.username} created! You can login now!")
+                MainActivity.viewModel.add(user)
 
-            clearAllEditTexts()
+                showSnackBar(view, "User: ${user.username} created! You can login now!")
 
-        }else{
-            when(credentialErrorType){
-                CredentialError.EMAIL ->  showSnackBar(view, "Enter a valid email!")
-                CredentialError.USERNAME -> showSnackBar(view, "Username can not be empty!")
-                CredentialError.PASSWORD -> showSnackBar(view, "Password should be at least 6 characters!")
-                else -> return
+                clearAllEditTexts()
             }
+
         }
 
         Log.i("User Data", MainActivity.viewModel.userList.toString())
     }
 
-    private fun isValidEmail(email: CharSequence?): Boolean {
-        return if(!email.isNullOrEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            credentialErrorType = CredentialError.NONE
-            true
-        }else{
-            credentialErrorType = CredentialError.EMAIL
-            false
+    private fun validateCredentials(
+        email: CharSequence?,
+        username: CharSequence?,
+        password: CharSequence?
+    ) {
+        credentialErrorType = when {
+            email.isNullOrEmpty() || !(Patterns.EMAIL_ADDRESS.matcher(email).matches()) -> {
+                CredentialError.EMAIL
+            }
+            username.isNullOrEmpty() -> {
+                CredentialError.USERNAME
+            }
+            password.isNullOrEmpty() || (password.length < 6) -> {
+                CredentialError.PASSWORD
+            }
+            else -> CredentialError.NONE
+
         }
     }
 
-    private fun isValidPassword(password: CharSequence?): Boolean {
-        return if(!password.isNullOrEmpty() && (password.length >= 6)){
-            credentialErrorType = CredentialError.NONE
-            true
-        }else{
-            credentialErrorType = CredentialError.PASSWORD
-            false
-        }
-    }
-
-    private fun isValidUserName(username: CharSequence?): Boolean{
-        return if(!username.isNullOrEmpty()){
-            credentialErrorType = CredentialError.NONE
-            true
-        }else{
-            credentialErrorType = CredentialError.USERNAME
-            false
-        }
-    }
-
-    private fun clearAllEditTexts(){
+    private fun clearAllEditTexts() {
         binding.etCreateEmail.text.clear()
         binding.etCreateUsername.text.clear()
         binding.etCreatePassword.text.clear()
     }
 
-    private fun showSnackBar(view: View, message: String){
+    private fun showSnackBar(view: View, message: String) {
         Snackbar.make(view, message, Snackbar.LENGTH_SHORT).show()
     }
 }
