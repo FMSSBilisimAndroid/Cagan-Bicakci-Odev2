@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         /**
-         *  view model initialized
+         *  view model initialized for UserViewModel
          */
         val factory = UserViewModelFactory()
         viewModel = ViewModelProvider(this,factory).get(UserViewModel::class.java)

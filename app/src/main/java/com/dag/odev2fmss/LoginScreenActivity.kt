@@ -41,6 +41,7 @@ class LoginScreenActivity : AppCompatActivity() {
         val passwordInput = binding.etPassword.text.toString()
 
         /**
+         * Searched for a user in userList
          * If user exist in view model set isUserExist to true otherwise it false
          */
         var isUserExist = false

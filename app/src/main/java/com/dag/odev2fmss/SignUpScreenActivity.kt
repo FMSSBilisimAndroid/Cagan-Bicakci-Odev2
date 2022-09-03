@@ -46,6 +46,11 @@ class SignUpScreenActivity : AppCompatActivity() {
                 password = passwordInput
             )
 
+            /**
+             * user object created and added to user List by calling add() method.
+             * Since it's a companion object, we can statically call add() method.
+             */
+
             MainActivity.viewModel.add(user)
 
             showSnackBar(view,"User: ${user.username} created! You can login now!")
